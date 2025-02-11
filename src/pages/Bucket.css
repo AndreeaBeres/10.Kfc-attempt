@@ -1,0 +1,294 @@
+body, html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ff4b2b;
+}
+
+header {
+    background: #ff4b2b;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+main {
+    padding-top: 80px; /* Adjust this value to the height of your header */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+header h1,
+nav ul li a {
+    color: white;
+}
+
+.Bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-left: 20px;
+    position: relative;
+    width: 100%;
+    margin-left: 160vh;
+}
+
+.icon-btn {
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.icon-btn:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.clickable-title {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}
+
+.dropdown-list {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 180px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    right: 10px;
+    top: 60px;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-list.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-list.hide {
+    display: none;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.dropdown-list ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-list ul li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-list ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+.dropdown-list ul li:hover {
+    background: #f5f5f5;
+}
+
+#menuList {
+    top: 70px;
+    right: 20px;
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #ff4b2b;
+    transform: scale(1.2);
+}
+
+.active {
+    background-color: #ff4b2b;
+}
+
+.meals-section {
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    margin-top: 20px;
+    clear: both;
+}
+
+.meals-section h2 {
+    color: #ff4b2b;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.meals-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.meal-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 200px;
+}
+
+.meal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.meal-card h3 {
+    font-weight: bold;
+}
+
+.meal-card img {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.meal-card h3 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.bigmeal-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.bigmeal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.bigmeal-card:hover img {
+    filter: brightness(1.1);
+}
+
+.bigmeal-card:hover h3 {
+    color: #d91e18;
+}
+
+.bigmeal-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.bigmeal-card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.bigmeal-card p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.no-underline {
+    text-decoration: none;
+    color: white;
+}
+
+.no-underline:visited {
+    color: white;
+}
+
+.no-underline:hover {
+    color: white;
+}
+
+.no-underline1:hover {
+    color: #ff6600;
+}
+
+.no-underline1 {
+    color: #d91e18 !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: black;
+    color: white;
+}
